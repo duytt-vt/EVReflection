@@ -171,6 +171,9 @@ open class EVObject: NSObject, NSCoding, EVReflectable  {
      - returns: True if the value needs to be ignored.
      */
     open func skipPropertyValue(_ value: Any, key: String) -> Bool {
+        if value is NSNull {
+            return true
+        }
         return false
     }
         
